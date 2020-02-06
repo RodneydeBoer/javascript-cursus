@@ -7,10 +7,11 @@
 //  >= groter of gelijk aan
 
 let temp = 0;
-let hetVriest = temp <= 0;
 
-if (hetVriest) {
+if (temp <= 0) {
     console.log('het vriest');
+} else {
+    console.log('het vriest niet');
 }
 
 //  de uitdaging
