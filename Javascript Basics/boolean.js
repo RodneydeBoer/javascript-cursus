@@ -9,7 +9,9 @@
 let temp = 0;
 let hetVriest = temp <= 0;
 
-console.log(hetVriest);
+if (hetVriest) {
+    console.log('het vriest');
+}
 
 //  de uitdaging
 
@@ -20,5 +22,8 @@ let leeftijd = 24;
 let isKind = leeftijd <= 7;
 let isVolwassen = leeftijd >= 18;
 
-console.log(isKind);
-console.log(isVolwassen);
+if (iskind) {
+    console.log('het is een kind');
+} else {
+    console.log('het is een volwassene');
+}
