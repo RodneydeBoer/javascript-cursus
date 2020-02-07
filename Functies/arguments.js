@@ -7,7 +7,7 @@ console.log(resultaat);
 
 // standaard arguments
 let getScoreText = function(name = 'Anoniem', score = 0) {
-    return 'Name: ' + name + ' & Score: ' + score
+    return `De gebruiker is ${name} en de score is ${score}`
 }
 let scoreText = getScoreText();
 console.log(scoreText);
@@ -19,9 +19,11 @@ console.log(scoreText);
 //  2 arguments: totaal & fooiPercentage .2 (20%) 
 
 let rekenFooiUit = function(bedrag = 0, fooipercentage = 20) {
-    let fooiBedrag = (bedrag / 100) * fooipercentage
-    return 'Het bedrag is: ' + bedrag + ' en de fooi is: ' + fooiBedrag
+    return `Het bedrag is ${bedrag} euro en de fooi komt uit op ${(bedrag / 100) * fooipercentage} euro`
 }
 
 let rekening = rekenFooiUit(5, 20)
 console.log(rekening)
+
+let naam = 'Rodney'
+console.log(`hey, mijn naam is ${naam} `)
