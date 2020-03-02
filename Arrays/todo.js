@@ -1,10 +1,6 @@
-// Challenge area
-
-// 1. convert array to array of objects -> text, completed property (true/false)
-
 const todos = [{
     text: 'Order cat food',
-    completed: true
+    completed: false
 }, {
     text: 'Clean kitchen',
     completed: true
@@ -19,16 +15,38 @@ const todos = [{
     completed: true
 }]
 
-const deleteTodo = function(todos, todoText) {
-    const index = todos.findIndex(function(todo) {
+const sortTodos = function (todos) {
+    todos.sort(function (a, b) {
+        if (!a.completed && b.completed) {
+            return -1
+        } else if (!b.completed && a.completed) {
+            return 1
+        } else {
+            return 0
+        }
+    })
+}
+
+const deleteTodo = function (todos, todoText) {
+    const index = todos.findIndex(function (todo) {
         return todo.text.toLowerCase() === todoText.toLowerCase()
     })
+
     if (index > -1) {
         todos.splice(index, 1)
     }
 }
 
-// 2. create function to remove a todo by text value
+const getThingsToDo = function (todos) {
+    return todos.filter(function (todo) {
+        return !todo.completed
+    })
+}
 
-deleteTodo(todos, 'buy food');
+sortTodos(todos)
 console.log(todos)
+
+// console.log(getThingsToDo(todos))
+ 
+// deleteTodo(todos, '!!buy food')
+// console.log(todos)
