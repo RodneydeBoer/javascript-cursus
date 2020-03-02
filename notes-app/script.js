@@ -10,3 +10,11 @@ ps.forEach(function(p) {
     // console.log(p.textContent)
     // p.remove()
 });
+
+// Challenge area
+// Add a new element
+const nieuwPara = document.createElement('p')
+
+nieuwPara.textContent = 'Dit is een nieuwe p vanuit js '
+
+document.querySelector('main').appendChild(nieuwPara)
