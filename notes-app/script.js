@@ -10,12 +10,16 @@ const notes = [{
 }]
 
 
-document.getElementById('create-note').addEventListener('click', function() {
-    console.log('create notes');
-
+document.getElementById('create-note').addEventListener('click', function(e) {
+    e.target.textContent = 'De button is clicked'
 })
 
 document.getElementById('remove-all').addEventListener('click', function() {
-    console.log('delete all notes');
+    document.querySelectorAll('.note').forEach(function(note) {
+        note.remove()
+    })
+})
 
+document.getElementById('zoek-tekst').addEventListener('input', function(e) {
+    console.log(e.target.value);
 })
