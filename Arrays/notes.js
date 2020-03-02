@@ -1,4 +1,13 @@
-const notes = ['Note 1', 'Note 2', 'Note 3']
+const notes = [{
+    titel: 'Mijn volgende trip',
+    body: 'Ik zou graag naar Spanje gaan'
+}, {
+    titel: 'Verbeteringen',
+    body: 'Ik zou graag Angular willen leren'
+}, {
+    titel: 'Aanpassingen',
+    body: 'Nieuwe motor kopen'
+}]
 
 
 // console.log(notes.pop());
@@ -7,23 +16,21 @@ const notes = ['Note 1', 'Note 2', 'Note 3']
 // console.log(notes.shift());
 // notes.unshift('My first note')
 
-notes[2] = 'Dit is nu de nieuwe note 3'
+// notes[2] = 'Dit is nu de nieuwe note 3'
 
 
 
-notes.forEach(function(item, index) {
-    console.log(index);
-    console.log(item);
-})
+// notes.forEach(function(item, index) {
+//     console.log(index);
+//     console.log(item);
+// })
 
 console.log(notes.length);
 console.log(notes);
 
-// counting ... 1
-for (let telling = 0; telling <= 2; telling++) {
-    console.log(telling);
-}
+const index = notes.findIndex(function(note, index) {
+    console.log(note);
+    return note.titel === 'Verbeteringen'
+})
 
-for (let telling = notes.length - 1; telling >= 0; telling--) {
-    console.log(notes[telling]);
-}
+console.log(index);
