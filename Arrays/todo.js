@@ -1,11 +1,12 @@
-// challenge area
+const todos = ['Order cat food', 'Clean kitchen', 'Buy food', 'Do work', 'Exercise']
 
-// create an array with 5 to-do's
+todos.splice(2, 1)
+todos.push('Buy coffee')
+todos.shift()
 
-const todo = ['boodschappen doen', 'de was', 'stofzuigen', 'dweilen', 'vuilnisbak']
-    // you have x todos (length)
-    // print the first and second to last items > todo: walk the dog (example)
+console.log(`You have ${todos.length} todos!`)
 
-console.log(`You have ${todo.length} things to do`);
-console.log(`You have to do ${todo[0]} first`);
-console.log(`You have to do ${todo[todo.length - 2]} as second to last`);
+todos.forEach(function(todo, index) {
+    const num = index + 1
+    console.log(`${num}. ${todo}`)
+})
