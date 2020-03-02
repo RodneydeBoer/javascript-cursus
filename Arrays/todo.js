@@ -1,13 +1,34 @@
-const todos = ['Order cat food', 'Clean kitchen', 'Buy food', 'Do work', 'Exercise']
+// Challenge area
 
-todos.splice(2, 1)
-todos.push('Buy coffee')
-todos.shift()
+// 1. convert array to array of objects -> text, completed property (true/false)
 
-console.log(`You have ${todos.length} todos!`)
+const todos = [{
+    text: 'Order cat food',
+    completed: true
+}, {
+    text: 'Clean kitchen',
+    completed: true
+}, {
+    text: 'Buy food',
+    completed: true
+}, {
+    text: 'Do work',
+    completed: false
+}, {
+    text: 'Exercise',
+    completed: true
+}]
 
-for (let telling = 0; telling < todos.length; telling++) {
-    const num = telling + 1
-    const todo = todos[telling]
-    console.log(`${num}. ${todo}`)
+const deleteTodo = function(todos, todoText) {
+    const index = todos.findIndex(function(todo) {
+        return todo.text.toLowerCase() === todoText.toLowerCase()
+    })
+    if (index > -1) {
+        todos.splice(index, 1)
+    }
 }
+
+// 2. create function to remove a todo by text value
+
+deleteTodo(todos, 'buy food');
+console.log(todos)

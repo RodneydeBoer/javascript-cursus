@@ -9,28 +9,17 @@ const notes = [{
     body: 'Nieuwe motor kopen'
 }]
 
+const findNote = function(notes, noteTitel) {
+        return notes.find(function(note, index) {
+            return note.titel.toLowerCase() === noteTitel.toLowerCase()
+        })
+    }
+    // const findNote = function(notes, noteTitel) {
+    //     const index = notes.findIndex(function(note, index) {
+    //         return note.titel.toLowerCase() === noteTitel.toLowerCase()
+    //     })
+    //     return notes[index]
+    // }
 
-// console.log(notes.pop());
-// notes.push('My new note')
-
-// console.log(notes.shift());
-// notes.unshift('My first note')
-
-// notes[2] = 'Dit is nu de nieuwe note 3'
-
-
-
-// notes.forEach(function(item, index) {
-//     console.log(index);
-//     console.log(item);
-// })
-
-console.log(notes.length);
-console.log(notes);
-
-const index = notes.findIndex(function(note, index) {
-    console.log(note);
-    return note.titel === 'Verbeteringen'
-})
-
-console.log(index);
+const note = findNote(notes, 'verbeteringen')
+console.log(note);
