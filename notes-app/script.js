@@ -9,6 +9,13 @@ const notes = [{
     body: 'Get a new seat'
 }]
 
-document.querySelector('button').addEventListener('click', function(e) {
-    e.target.textContent = 'De button is al gebruikt'
+
+document.getElementById('create-note').addEventListener('click', function() {
+    console.log('create notes');
+
+})
+
+document.getElementById('remove-all').addEventListener('click', function() {
+    console.log('delete all notes');
+
 })
