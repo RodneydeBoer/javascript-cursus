@@ -18,3 +18,12 @@ notes.forEach(function(item, index) {
 
 console.log(notes.length);
 console.log(notes);
+
+// counting ... 1
+for (let telling = 0; telling <= 2; telling++) {
+    console.log(telling);
+}
+
+for (let telling = notes.length - 1; telling >= 0; telling--) {
+    console.log(notes[telling]);
+}
