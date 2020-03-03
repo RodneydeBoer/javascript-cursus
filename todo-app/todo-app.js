@@ -16,12 +16,16 @@ const todos = [{
 }]
 
 const filters = {
-    searchText: ''
+    searchText: '',
+    hideCompleted: false
 }
 
 const renderTodos = function(todos, filters) {
     const filteredTodos = todos.filter(function(todo) {
-        return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+        const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+        const hideCompletedMatch = !filters.hideCompleted || !todo.completed
+
+        return searchTextMatch && hideCompletedMatch
     })
 
     const incompleteTodos = filteredTodos.filter(function(todo) {
@@ -64,5 +68,14 @@ document.getElementById('addtodo').addEventListener('submit', function(e) {
     })
     renderTodos(todos, filters)
     e.target.elements.nieuw.value = ' '
+})
 
+// Challenge area
+// 1. create a checkbox and setup event listener > hide completed
+// 2. create hideCompleted filter (default false)
+// 3.Update hideCompleted and rerender list on checkbox Change 
+// 4. setup renderTodos to remove completed items
+document.getElementById('verberg').addEventListener('change', function(e) {
+    filters.hideCompleted = e.target.checked
+    renderTodos(todos, filters)
 })
